@@ -12,6 +12,6 @@ import com.gestionStock.models.Stock;
 @Repository
 public interface StockRepository extends JpaRepository<Stock, Long> {
 	
-	@Query(value = "SELECT * FROM Stock WHERE article.idArticle=id1", nativeQuery = true)
-	List<Stock> getByArticle(@Param("id") Long id);
+	@Query(value = "SELECT * FROM Stock as tab where tab.id_article=1", nativeQuery = true)
+	List<Stock> getByArticle(Long id);
 }
